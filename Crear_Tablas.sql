@@ -1,7 +1,7 @@
 CREATE TABLE clientes(
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    num_contacto INT(4) NOT NULL,
+    num_contacto INT(14) NOT NULL,
     direccion VARCHAR(70) NOT NULL
 );
 
@@ -20,7 +20,8 @@ CREATE TABLE facturacion(
 );
 
 CREATE TABLE pedidos(
-    pedido_id INT(4) AUTO_INCREMENT PRIMARY KEY
+    pedido_id INT(4) AUTO_INCREMENT PRIMARY KEY,
+    generated_AT DATE NOT NULL
 );
 
 CREATE TABLE detalles_pedido(
@@ -199,5 +200,7 @@ CREATE TABLE ingredientes(
     ingrediente_id INTEGER(4) AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     tipo VARCHAR(50) NOT NULL,
-    fecha_vencimiento DATE NOT NULL
+    fecha_vencimiento DATE NOT NULL,
+    stock INTEGER(4) NOT NULL,
+    disponible SMALLINT(1) NOT NULL
 );
